@@ -16,7 +16,8 @@ http://microsoft.github.io/code-push/
 
 ## About plugin
 
-Includes CodePush functionalities for local use and build server:
+Includes "some" CodePush functionalities for local use and build server:
+The functionallity is currently limited to the options described below. The plugin got created out of a specific business need. So if you'd like to have more freedom to specify things like parameters by your needs, create a pull request or ask for it....
 
 ### Login action
 https://github.com/Microsoft/code-push/blob/master/cli/README.md#access-keys
@@ -52,6 +53,13 @@ dry_run  | Print the command that would be run, and don't run it  |  | false
 ### Release React action
 
 https://github.com/Microsoft/code-push/blob/master/cli/README.md#releasing-updates-react-native
+
+```
+code_push_release_react(
+        app_name: "YOURAPPNAME",
+        target_binary_version: "1.0.5"
+      )
+```
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
