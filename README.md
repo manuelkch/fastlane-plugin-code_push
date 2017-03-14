@@ -10,11 +10,16 @@ This project is a [fastlane](https://github.com/fastlane/fastlane) plugin. To ge
 fastlane add_plugin code_push
 ```
 
+## Dependencies
+CodePush CLI :
+http://microsoft.github.io/code-push/
+
 ## About plugin
 
 Includes CodePush functionalities for local use and build server:
 
 ### Login action
+https://github.com/Microsoft/code-push/blob/master/cli/README.md#access-keys
 
 ```
 code_push_login(access_key: YOURSECRETACCESSKEY)
@@ -43,9 +48,6 @@ app_name  | CodePush app name for promoting to  | FASTLANE_CODE_PUSH_APP_NAME  |
 from  | sourceDeploymentName  |  | Staging
 to  | destDeploymentName  |   | Production
 dry_run  | Print the command that would be run, and don't run it  |  | false
-## Dependencies
-CodePush CLI :
-http://microsoft.github.io/code-push/
 
 
 ## Example
