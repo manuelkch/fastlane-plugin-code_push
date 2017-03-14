@@ -17,7 +17,7 @@ module Fastlane
       end
 
       def self.description
-        "CodePush logi with accessKey if not allready logged in"
+        "CodePush login with accessKey"
       end
 
       def self.authors
@@ -30,7 +30,7 @@ module Fastlane
 
       def self.details
         # Optional:
-        "Generall CodePush login functionality for fastlane with pre check if user is allready logged in"
+        "Generall CodePush login functionality for fastlane with optional enforced relogin"
       end
 
       def self.available_options

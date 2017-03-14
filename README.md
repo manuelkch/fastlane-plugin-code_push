@@ -1,4 +1,4 @@
-# code_push plugin
+# CodePush Fastlane Plugin
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-code_push)
 
@@ -10,11 +10,43 @@ This project is a [fastlane](https://github.com/fastlane/fastlane) plugin. To ge
 fastlane add_plugin code_push
 ```
 
-## About code_push
+## About plugin
 
-CodePush functionality for fastlane
+Includes CodePush functionalities for local use and build server:
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+### Login action
+
+```
+code_push_login(access_key: YOURSECRETACCESSKEY)
+```
+Options:  
+
+Key  | Description | Env Var | Default
+------------- | ------------- | ------------- | -------------
+access_key  | Access Key for CodePush Login  | CODE_PUSH_ACCESS_KEY  |
+enforce  | Enforce logout before login  |  | false
+
+
+### Release React action
+
+### Promote action
+https://github.com/Microsoft/code-push/blob/master/cli/README.md#promoting-updates
+
+```
+code_push_promote(app_name: YOURCODEPUSHAPPNAME)
+```
+Options:  
+
+Key  | Description | Env Var | Default
+------------- | ------------- | ------------- | -------------
+app_name  | CodePush app name for promoting to  | FASTLANE_CODE_PUSH_APP_NAME  |
+from  | sourceDeploymentName  |  | Staging
+to  | destDeploymentName  |   | Production
+dry_run  | Print the command that would be run, and don't run it  |  | false
+## Dependencies
+CodePush CLI :
+http://microsoft.github.io/code-push/
+
 
 ## Example
 

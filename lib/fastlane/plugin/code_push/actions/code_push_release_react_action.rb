@@ -66,7 +66,6 @@ module Fastlane
                                        description: "Release description for CodePush"),
           FastlaneCore::ConfigItem.new(
                                       key: :dry_run,
-                                      env_name: "CODEPUSH_DRY_RUN",
                                       description: "Print the command that would be run, and don't run it",
                                       is_string: false,
                                       default_value: false)
