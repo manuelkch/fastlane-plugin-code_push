@@ -9,7 +9,7 @@ module Fastlane
           if params[:access_key].instance_of?(String)
             Helper::CodePushLoginHelper.log_in(params[:access_key])
           else
-            UI.error("Provide parameter :access_key String")
+            UI.user_error!("Provide parameter :access_key String")
           end
         else
           UI.important "Login skipped !!! You were allready logged in. Logout first "
@@ -44,7 +44,7 @@ module Fastlane
                                        type: TrueClass,
                                        optional: true,
                                        default_value: false,
-                                       description: "Enforce logout before login"),
+                                       description: "Enforce logout before login")
         ]
       end
 

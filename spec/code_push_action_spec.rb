@@ -1,9 +1,13 @@
-describe Fastlane::Actions::CodePushAction do
-  describe '#run' do
-    it 'prints a message' do
-      expect(Fastlane::UI).to receive(:message).with("The code_push plugin is working!")
-
-      Fastlane::Actions::CodePushAction.run(nil)
+describe FastlaneCore::Helper::CodePushLoginHelper do
+  describe '#Login' do
+    it 'codepush cli should be installed and runnable' do
+    end
+  end
+  describe '#Login' do
+    it 'login with invalid key should fail' do
+      demo_key = "wefnklwefnkfnwecnwerkflw"
+      expect(Fastlane::UI).to receive(:user_error!).with("something went wrong during login with access key #{demo_key}")
+      FastlaneCore::Helper::CodePushLoginHelper.log_in(demo_key.to_s)
     end
   end
 end
