@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{manuel.koch@ymc.ch}
 
   spec.summary       = %q{CodePush functionality for fastlane}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-code_push"
+  spec.homepage      = "https://github.com/manuelkch/fastlane-plugin-code_push"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
