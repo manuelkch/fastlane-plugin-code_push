@@ -15,7 +15,7 @@ module Fastlane
       def self.is_logged_in
         value = true
         begin
-          Action.sh("code-push whoami")
+          Action.sh("code-push whoami", false)
         rescue
           value = false
         end
