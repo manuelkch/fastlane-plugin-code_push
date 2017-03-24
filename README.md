@@ -69,7 +69,8 @@ deployment  | Deployment name for releasing to  |   | Staging
 target_binary_version  | Target binary version for example 1.0.1  |  |
 mandatory  | manadtory update or not  |   | true
 description  | Release description for CodePush  |  | no description for release
-dry_run  | Print the command that would be run, and don't run it  |  | false
+disabled  | Specifies whether this release should be immediately downloadable  [boolean] [Standard: false]  |  | false
+dry_run  | Print the command that would be run, but don't run it  |  | false
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
