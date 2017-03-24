@@ -10,6 +10,9 @@ module Fastlane
         if params[:target_binary_version]
           command += "-t #{params[:target_binary_version]} "
         end
+        if params[:disabled]
+          command += "-x "
+        end
         if params[:dry_run]
           UI.message("Dry run!".red + " Would have run: " + command + "\n")
         else
@@ -68,7 +71,12 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :dry_run,
                                        description: "Print the command that would be run, and don't run it",
                                        is_string: false,
-                                       default_value: false)
+                                       default_value: false),
+          FastlaneCore::ConfigItem.new(key: :disabled,
+                                      is_string: false,
+                                      default_value: false,
+                                      optional: true,
+                                      description: "Specifies whether this release should be immediately downloadable")
         ]
       end
 
