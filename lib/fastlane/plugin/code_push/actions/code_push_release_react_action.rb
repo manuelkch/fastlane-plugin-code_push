@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class CodePushReleaseReactAction < Action
       def self.run(params)
-        Dir.chdir "#{params[:execution_dir_path]}" do
+        Dir.chdir(params[:execution_dir_path]).to_s do
           command = "code-push release-react #{params[:app_name]} #{params[:platform]} -d #{params[:deployment]} "\
             "--des \"#{params[:description]}\" "
           if params[:mandatory]
@@ -46,11 +46,11 @@ module Fastlane
                                      type: String,
                                      optional: false,
                                      description: "CodePush app name for releasing"),
-         FastlaneCore::ConfigItem.new(key: :execution_dir_path,
-                                     type: String,
-                                     optional: true,
-                                     default_value: "./",
-                                     description: "Release React CLI command execution dir"),
+          FastlaneCore::ConfigItem.new(key: :execution_dir_path,
+                                      type: String,
+                                      optional: true,
+                                      default_value: "./",
+                                      description: "Release React CLI command execution dir"),
           FastlaneCore::ConfigItem.new(key: :platform,
                                       type: String,
                                       optional: true,
