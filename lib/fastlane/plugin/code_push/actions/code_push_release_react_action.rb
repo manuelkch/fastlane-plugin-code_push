@@ -14,6 +14,9 @@ module Fastlane
           if params[:disabled]
             command += "-x "
           end
+          if params[:no_duplicate_release_error]
+            command += "--noDuplicateReleaseError "
+          end
           if params[:dry_run]
             UI.message("Dry run!".red + " Would have run: " + command + "\n")
           else
@@ -84,6 +87,11 @@ module Fastlane
                                       default_value: false,
                                       optional: true,
                                       description: "Specifies whether this release should be immediately downloadable")
+          FastlaneCore::ConfigItem.new(key: :no_duplicate_release_error,
+                                      is_string: false,
+                                      default_value: false,
+                                      optional: true,
+                                      description: "Specifies whether to return an error if the main bundle is identical to the latest codepush release")
         ]
       end
 

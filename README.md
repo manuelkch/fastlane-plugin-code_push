@@ -71,6 +71,7 @@ target_binary_version  | Target binary version for example 1.0.1  |  |
 mandatory  | manadtory update or not  |   | true
 description  | Release description for CodePush  |  | no description for release
 disabled  | Specifies whether this release should be immediately downloadable  [boolean] [Standard: false]  |  | false
+no_duplicate_release_error  | Specifies whether to return an error if the main bundle is identical to the latest codepush release  |  | false
 dry_run  | Print the command that would be run, but don't run it  |  | false
 ## Example
 
