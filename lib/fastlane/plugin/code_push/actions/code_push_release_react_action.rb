@@ -86,7 +86,7 @@ module Fastlane
                                       is_string: false,
                                       default_value: false,
                                       optional: true,
-                                      description: "Specifies whether this release should be immediately downloadable")
+                                      description: "Specifies whether this release should be immediately downloadable"),
           FastlaneCore::ConfigItem.new(key: :no_duplicate_release_error,
                                       is_string: false,
                                       default_value: false,
