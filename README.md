@@ -49,6 +49,28 @@ from  | sourceDeploymentName  |  | Staging
 to  | destDeploymentName  |   | Production
 dry_run  | Print the command that would be run, and don't run it  |  | false
 
+### Release Cordova action
+
+https://github.com/Microsoft/code-push/blob/master/cli/README.md#releasing-updates-cordova
+
+```
+code_push_release_cordova(
+        app_name: "YOURAPPNAME",
+        target_binary_version: "1.0.5"
+      )
+```
+
+Key  | Description | Env Var | Default
+------------- | ------------- | ------------- | -------------
+app_name  | CodePush app name for releasing | FASTLANE_CODE_PUSH_APP_NAME  |
+execution_dir_path  | Release React CLI command execution dir path. Set to project root when you execute fastlane in a diffrent dir than package.json stays  |  | ./
+platform  | Platform for releasing to  |  | android
+deployment  | Deployment name for releasing to  |   | Staging
+target_binary_version  | Target binary version for example 1.0.1  |  |
+mandatory  | manadtory update or not  |   | true
+description  | Release description for CodePush  |  | no description for release
+no_duplicate_release_error  | Specifies whether to return an error if the main bundle is identical to the latest codepush release  |  | false
+dry_run  | Print the command that would be run, but don't run it  |  | false
 
 ### Release React action
 
@@ -73,6 +95,7 @@ description  | Release description for CodePush  |  | no description for release
 disabled  | Specifies whether this release should be immediately downloadable  [boolean] [Standard: false]  |  | false
 no_duplicate_release_error  | Specifies whether to return an error if the main bundle is identical to the latest codepush release  |  | false
 dry_run  | Print the command that would be run, but don't run it  |  | false
+
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
