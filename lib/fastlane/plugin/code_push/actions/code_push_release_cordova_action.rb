@@ -1,6 +1,6 @@
 module Fastlane
   module Actions
-    class CodePushReleaseReactAction < Action
+    class CodePushReleaseCordovaAction < Action
       def self.run(params)
         Dir.chdir "#{params[:execution_dir_path]}" do
           command = "code-push release-cordova #{params[:app_name]} #{params[:platform]} -d #{params[:deployment]} "\
@@ -50,7 +50,7 @@ module Fastlane
                                      type: String,
                                      optional: true,
                                      default_value: "./",
-                                     description: "Release React CLI command execution dir"),
+                                     description: "Release Cordova CLI command execution dir"),
           FastlaneCore::ConfigItem.new(key: :platform,
                                       type: String,
                                       optional: true,
