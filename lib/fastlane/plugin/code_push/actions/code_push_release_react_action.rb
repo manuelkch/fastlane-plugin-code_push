@@ -17,6 +17,15 @@ module Fastlane
           if params[:no_duplicate_release_error]
             command += "--noDuplicateReleaseError "
           end
+          if params[:bundle_name]
+            command += "-b #{params[:bundle_name]} "
+          end
+          if params[:output_dir]
+            command += "-o #{params[:output_dir]} "
+          end
+          if params[:sourcemap_output]
+            command += "-s #{params[:sourcemap_output]} "
+          end
           if params[:dry_run]
             UI.message("Dry run!".red + " Would have run: " + command + "\n")
           else
@@ -91,7 +100,19 @@ module Fastlane
                                       is_string: false,
                                       default_value: false,
                                       optional: true,
-                                      description: "Specifies whether to return an error if the main bundle is identical to the latest codepush release")
+                                      description: "Specifies whether to return an error if the main bundle is identical to the latest codepush release"),
+          FastlaneCore::ConfigItem.new(key: :bundle_name,
+                                      is_string: true,
+                                      optional: true,
+                                      description: "Specifies the name of the bundle file"),
+          FastlaneCore::ConfigItem.new(key: :output_dir,
+                                      is_string: true,
+                                      optional: true,
+                                      description: "Specifies path to where the bundle and sourcemap should be written"),
+          FastlaneCore::ConfigItem.new(key: :sourcemap_output,
+                                      is_string: true,
+                                      optional: true,
+                                      description: "Specifies path to write sourcemap to")
         ]
       end
 
