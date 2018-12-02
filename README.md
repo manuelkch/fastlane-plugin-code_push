@@ -62,7 +62,7 @@ code_push_release_cordova(
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-app_name  | CodePush app name for releasing | FASTLANE_CODE_PUSH_APP_NAME  |
+app_name  | CodePush app name for releasing | FASTLANE_APPCENTER_APP_NAME  |
 execution_dir_path  | Release React CLI command execution dir path. Set to project root when you execute fastlane in a diffrent dir than package.json stays  |  | ./
 platform  | Platform for releasing to  |  | android
 deployment  | Deployment name for releasing to  |   | Staging
