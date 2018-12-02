@@ -23,13 +23,13 @@ The functionallity is currently limited to the options described below. The plug
 https://github.com/Microsoft/code-push/blob/master/cli/README.md#access-keys
 
 ```
-code_push_login(access_key: YOURSECRETACCESSKEY)
+code_push_login(token: YOURSECRETACCESSKEY)
 ```
 Options:  
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-access_key  | Access Key for CodePush Login  | CODE_PUSH_ACCESS_KEY  |
+token  | Access Key for CodePush Login  | APP_CENTER_ACCESS_TOKEN  |
 enforce  | Enforce logout before login  |  | false
 
 "enforce" is usefull if you want to be assure that actions are done by a specfic "user" and not by  the may current logged in user. Like in the context of a automatic build process
