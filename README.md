@@ -44,7 +44,7 @@ Options:
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-app_name  | CodePush app name for promoting to  | FASTLANE_CODE_PUSH_APP_NAME  |
+app_name  | CodePush app name for promoting to  | FASTLANE_APPCENTER_APP_NAME  |
 from  | sourceDeploymentName  |  | Staging
 to  | destDeploymentName  |   | Production
 dry_run  | Print the command that would be run, and don't run it  |  | false

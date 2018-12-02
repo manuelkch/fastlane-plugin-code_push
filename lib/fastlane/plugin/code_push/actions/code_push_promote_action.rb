@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class CodePushPromoteAction < Action
       def self.run(params)
-        command = "code-push promote #{params[:app_name]} #{params[:from]} #{params[:to]}"
+        command = "appcenter codepush promote -a #{params[:app_name]} -s #{params[:from]} -d #{params[:to]}"
         if params[:dry_run]
           UI.message("Dry run!".red + " Would have run: " + command + "\n")
         else
@@ -15,7 +15,7 @@ module Fastlane
       end
 
       def self.authors
-        ["Manuel Koch"]
+        ["Manuel Koch", "Hannan Shaik"]
       end
 
       def self.return_value
@@ -28,7 +28,7 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :app_name,
-                                      env_name: "FASTLANE_CODE_PUSH_APP_NAME",
+                                      env_name: "FASTLANE_APPCENTER_APP_NAME",
                                       type: String,
                                       optional: false,
                                       description: "CodePush app name for promoting to"),
