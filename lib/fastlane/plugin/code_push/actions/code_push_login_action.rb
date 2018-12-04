@@ -6,10 +6,10 @@ module Fastlane
           Helper::CodePushLoginHelper.log_out
         end
         if Helper::CodePushLoginHelper.is_logged_in == false
-          if params[:access_key].instance_of?(String)
-            Helper::CodePushLoginHelper.log_in(params[:access_key])
+          if params[:token].instance_of?(String)
+            Helper::CodePushLoginHelper.log_in(params[:token])
           else
-            UI.user_error!("Provide parameter :access_key String")
+            UI.user_error!("Provide parameter :token String")
           end
         else
           UI.important "Login skipped !!! You were allready logged in. Logout first "
@@ -17,11 +17,11 @@ module Fastlane
       end
 
       def self.description
-        "CodePush login with accessKey"
+        "AppCenter login with accessKey"
       end
 
       def self.authors
-        ["Manuel Koch"]
+        ["Manuel Koch", "Hannan Shaik"]
       end
 
       def self.return_value
@@ -35,11 +35,11 @@ module Fastlane
 
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :access_key,
-                                      env_name: "CODE_PUSH_ACCESS_KEY",
+          FastlaneCore::ConfigItem.new(key: :token,
+                                      env_name: "APP_CENTER_ACCESS_TOKEN",
                                       type: String,
                                       optional: false,
-                                      description: "Access Key for CodePush Login"),
+                                      description: "Access Key for AppCenter Login"),
           FastlaneCore::ConfigItem.new(key: :enforce,
                                        type: TrueClass,
                                        optional: true,

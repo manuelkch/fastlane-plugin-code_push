@@ -3,8 +3,8 @@ module Fastlane
     class CodePushReleaseCordovaAction < Action
       def self.run(params)
         Dir.chdir "#{params[:execution_dir_path]}" do
-          command = "code-push release-cordova #{params[:app_name]} #{params[:platform]} -d #{params[:deployment]} "\
-            "--des \"#{params[:description]}\" "
+          command = "appcenter codepush release-cordova -a #{params[:app_name]} -d #{params[:deployment]} "\
+            "--description \"#{params[:description]}\" "
           if params[:mandatory]
             command += "-m "
           end
@@ -42,7 +42,7 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :app_name,
-                                     env_name: "FASTLANE_CODE_PUSH_APP_NAME",
+                                     env_name: "FASTLANE_APPCENTER_APP_NAME",
                                      type: String,
                                      optional: false,
                                      description: "CodePush app name for releasing"),

@@ -3,8 +3,8 @@ module Fastlane
     class CodePushReleaseReactAction < Action
       def self.run(params)
         Dir.chdir "#{params[:execution_dir_path]}" do
-          command = "code-push release-react #{params[:app_name]} #{params[:platform]} -d #{params[:deployment]} "\
-            "--des \"#{params[:description]}\" "
+          command = "appcenter codepush release-react -a #{params[:app_name]} -d #{params[:deployment]} "\
+            "--description \"#{params[:description]}\" "
           if params[:mandatory]
             command += "-m "
           end
@@ -39,7 +39,7 @@ module Fastlane
       end
 
       def self.authors
-        ["Manuel Koch"]
+        ["Manuel Koch", "Hannan Shaik"]
       end
 
       def self.return_value
@@ -54,7 +54,7 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :app_name,
-                                     env_name: "FASTLANE_CODE_PUSH_APP_NAME",
+                                     env_name: "FASTLANE_APPCENTER_APP_NAME",
                                      type: String,
                                      optional: false,
                                      description: "CodePush app name for releasing"),
@@ -63,11 +63,6 @@ module Fastlane
                                      optional: true,
                                      default_value: "./",
                                      description: "Release React CLI command execution dir"),
-          FastlaneCore::ConfigItem.new(key: :platform,
-                                      type: String,
-                                      optional: true,
-                                      default_value: "android",
-                                      description: "Platform for releasing to"),
           FastlaneCore::ConfigItem.new(key: :deployment,
                                       type: String,
                                       optional: true,

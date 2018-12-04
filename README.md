@@ -23,13 +23,13 @@ The functionallity is currently limited to the options described below. The plug
 https://github.com/Microsoft/code-push/blob/master/cli/README.md#access-keys
 
 ```
-code_push_login(access_key: YOURSECRETACCESSKEY)
+code_push_login(token: YOURSECRETACCESSKEY)
 ```
 Options:  
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-access_key  | Access Key for CodePush Login  | CODE_PUSH_ACCESS_KEY  |
+token  | Access Key for CodePush Login  | APP_CENTER_ACCESS_TOKEN  |
 enforce  | Enforce logout before login  |  | false
 
 "enforce" is usefull if you want to be assure that actions are done by a specfic "user" and not by  the may current logged in user. Like in the context of a automatic build process
@@ -44,7 +44,7 @@ Options:
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-app_name  | CodePush app name for promoting to  | FASTLANE_CODE_PUSH_APP_NAME  |
+app_name  | CodePush app name for promoting to  | FASTLANE_APPCENTER_APP_NAME  |
 from  | sourceDeploymentName  |  | Staging
 to  | destDeploymentName  |   | Production
 dry_run  | Print the command that would be run, and don't run it  |  | false
@@ -62,7 +62,7 @@ code_push_release_cordova(
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-app_name  | CodePush app name for releasing | FASTLANE_CODE_PUSH_APP_NAME  |
+app_name  | CodePush app name for releasing | FASTLANE_APPCENTER_APP_NAME  |
 execution_dir_path  | Release React CLI command execution dir path. Set to project root when you execute fastlane in a diffrent dir than package.json stays  |  | ./
 platform  | Platform for releasing to  |  | android
 deployment  | Deployment name for releasing to  |   | Staging
@@ -85,9 +85,8 @@ code_push_release_react(
 
 Key  | Description | Env Var | Default
 ------------- | ------------- | ------------- | -------------
-app_name  | CodePush app name for releasing | FASTLANE_CODE_PUSH_APP_NAME  |
+app_name  | CodePush app name for releasing | FASTLANE_APPCENTER_APP_NAME  |
 execution_dir_path  | Release React CLI command execution dir path. Set to project root when you execute fastlane in a diffrent dir than package.json stays  |  | ./
-platform  | Platform for releasing to  |  | android
 deployment  | Deployment name for releasing to  |   | Staging
 target_binary_version  | Target binary version for example 1.0.1  |  |
 mandatory  | manadtory update or not  |   | true
