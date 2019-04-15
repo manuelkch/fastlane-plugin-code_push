@@ -115,11 +115,11 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :sourcemap_output,
                                       is_string: true,
                                       optional: true,
-                                      description: "Specifies path to write sourcemap to")
+                                      description: "Specifies path to write sourcemap to"),
           FastlaneCore::ConfigItem.new(key: :entry_file,
                                       is_string: true,
                                       optional: true,
-                                      description: "specifies the relative path to the app's root/entry JavaScript file")
+                                      description: "Specifies the relative path to the app's root/entry JavaScript file")
         ]
       end
 

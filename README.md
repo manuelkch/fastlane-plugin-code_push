@@ -70,7 +70,7 @@ target_binary_version  | Target binary version for example 1.0.1  |  |
 mandatory  | manadtory update or not  |   | true
 description  | Release description for CodePush  |  | no description for release
 no_duplicate_release_error  | Specifies whether to return an error if the main bundle is identical to the latest codepush release  |  | false
-entry_file | This specifies the relative path to the app's root/entry JavaScript file. | none
+entry_file | This specifies the relative path to the app's root/entry JavaScript file. | | none
 dry_run  | Print the command that would be run, but don't run it  |  | false
 
 ### Release React action
