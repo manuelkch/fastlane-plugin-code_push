@@ -26,6 +26,9 @@ module Fastlane
           if params[:sourcemap_output]
             command += "-s #{params[:sourcemap_output]} "
           end
+          if params[:entry_file]
+            command += "-e #{params[:entry_file]} "
+          end
           if params[:dry_run]
             UI.message("Dry run!".red + " Would have run: " + command + "\n")
           else
@@ -113,6 +116,10 @@ module Fastlane
                                       is_string: true,
                                       optional: true,
                                       description: "Specifies path to write sourcemap to")
+          FastlaneCore::ConfigItem.new(key: :entry_file,
+                                      is_string: true,
+                                      optional: true,
+                                      description: "specifies the relative path to the app's root/entry JavaScript file")
         ]
       end
 
