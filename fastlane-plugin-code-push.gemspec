@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fastlane/plugin/code_push/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fastlane-plugin-code_push'
+  spec.name          = 'fastlane-plugin-code-push'
   spec.version       = Fastlane::CodePush::VERSION
   spec.author        = %q{Manuel Koch}
   spec.email         = %q{manuel.koch@ymc.ch}

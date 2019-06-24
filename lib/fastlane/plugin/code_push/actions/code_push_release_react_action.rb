@@ -26,6 +26,9 @@ module Fastlane
           if params[:sourcemap_output]
             command += "-s #{params[:sourcemap_output]} "
           end
+          if params[:private_key_path]
+            command += "-privateKeyPath #{params[:private_key_path]}"
+          end
           if params[:dry_run]
             UI.message("Dry run!".red + " Would have run: " + command + "\n")
           else
@@ -91,6 +94,10 @@ module Fastlane
                                        description: "Print the command that would be run, and don't run it",
                                        is_string: false,
                                        default_value: false),
+          FastlaneCore::ConfigItem.new(key: :private_key_path,
+                                       is_string: true,
+                                       optional: true,
+                                       description: "Specifies path to the private key for signing this release"),
           FastlaneCore::ConfigItem.new(key: :disabled,
                                       is_string: false,
                                       default_value: false,
