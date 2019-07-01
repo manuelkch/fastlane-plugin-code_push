@@ -6,7 +6,9 @@ module Fastlane
           Helper::CodePushLoginHelper.log_out
         end
         if Helper::CodePushLoginHelper.is_logged_in == false
-          if params[:access_key].instance_of?(String)
+          if params[:access_key].instance_of?(String) and params[:server_url].instance_of?(String)
+            Helper::CodePushLoginHelper.log_in(params[:access_key], params[:server_url])
+          elsif params[:access_key].instance_of?(String)
             Helper::CodePushLoginHelper.log_in(params[:access_key])
           else
             UI.user_error!("Provide parameter :access_key String")
@@ -44,7 +46,12 @@ module Fastlane
                                        type: TrueClass,
                                        optional: true,
                                        default_value: false,
-                                       description: "Enforce logout before login")
+                                       description: "Enforce logout before login"),
+          FastlaneCore::ConfigItem.new(key: :server_url,
+                                       type: String,
+                                       optional: true,
+                                       default_value: '',
+                                       description: "Code push server url")
         ]
       end
 

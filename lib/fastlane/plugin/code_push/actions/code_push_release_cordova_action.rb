@@ -83,7 +83,7 @@ module Fastlane
                                       is_string: false,
                                       default_value: false,
                                       optional: true,
-                                      description: "Specifies whether to return an error if the main bundle is identical to the latest codepush release")
+                                      description: "Specifies whether to return an error if the main bundle is identical to the latest code_push release")
         ]
       end
 
