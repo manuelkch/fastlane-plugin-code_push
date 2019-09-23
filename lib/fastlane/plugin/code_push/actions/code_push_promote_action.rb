@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class CodePushPromoteAction < Action
       def self.run(params)
-        command = "code-push promote #{params[:app_name]} #{params[:from]} #{params[:to]}"
+        command = "npx code-push promote #{params[:app_name]} #{params[:from]} #{params[:to]}"
         if params[:dry_run]
           UI.message("Dry run!".red + " Would have run: " + command + "\n")
         else

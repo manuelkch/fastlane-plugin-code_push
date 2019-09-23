@@ -3,7 +3,7 @@ module Fastlane
     class CodePushReleaseCordovaAction < Action
       def self.run(params)
         Dir.chdir "#{params[:execution_dir_path]}" do
-          command = "code-push release-cordova #{params[:app_name]} #{params[:platform]} -d #{params[:deployment]} "\
+          command = "npx code-push release-cordova #{params[:app_name]} #{params[:platform]} -d #{params[:deployment]} "\
             "--des \"#{params[:description]}\" "
           if params[:mandatory]
             command += "-m "
